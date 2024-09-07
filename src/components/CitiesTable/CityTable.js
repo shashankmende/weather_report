@@ -104,15 +104,66 @@ const CityTable = () => {
 
 
   return (
-    <div>
+    <div style={{padding:'15px'}}>
       
-      <ul>
+      {/* <ul>
         {citiesData.length > 0
           && citiesData.map((each, index) => (
               <li style={{backgroundColor:"lightgray",height:'150px',listStyleType:'none',margin:'10px'}} key={index}>{each.geoname_id}</li>
             ))
           }
-      </ul>
+      </ul> */}
+      <table style={{margin:'auto', width: '80%', textAlign: 'center', borderCollapse: 'collapse' }}>
+  <thead style={{
+    position:'sticky',
+    top:0,
+    backgroundColor:'lightgray',
+    zIndex:1
+  }}>
+    <tr>
+      <th style={{ border: '1px solid #000' }}>City Name</th>
+      <th style={{ border: '1px solid #000' }}>Country Name</th>
+      <th style={{ border: '1px solid #000' }}>Population</th>
+      <th style={{ border: '1px solid #000' }}>Time zone</th>
+    </tr>
+  </thead>
+  <tbody>
+    {citiesData.map((city, index) => (
+      <tr key={index} style={{ height: '150px' }}>
+        <td style={{ border: '1px solid #000' }}>{city.name}</td>
+        <td style={{ border: '1px solid #000' }}>{city.cou_name_en}</td>
+        <td style={{ border: '1px solid #000' }}>{city.population}</td>
+        <td style={{ border: '1px solid #000' }}>{city.timezone}</td>
+      </tr>
+    ))}
+  </tbody>
+</table>
+
+      {/* <table border="1" style={{ width: "100%", textAlign: "left" }}>
+        <thead>
+          <tr>
+            <th>City Name</th>
+            <th>Country</th>
+            <th>Timezone</th>
+            <th>Population</th>
+            <th>Latitude</th>
+            <th>Longitude</th>
+          </tr>
+        </thead>
+        <tbody>
+          {citiesData.length > 0 &&
+            citiesData.map((city, index) => (
+              <tr key={index} style={{height:'150px'}}>
+                <td>{city.name}</td>
+                <td>{city?.country?.name || "N/A"}</td>
+                <td>{city?.timezone?.name || "N/A"}</td>
+                <td>{city?.population || "N/A"}</td>
+                <td>{city?.location?.lat || "N/A"}</td>
+                <td>{city?.location?.lon || "N/A"}</td>
+              </tr>
+            ))}
+        </tbody>
+      </table> */}
 
 
 
