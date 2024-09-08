@@ -3,20 +3,26 @@
     padding: 0;
     margin: 0;
     font-family: sans-serif;
+    scroll-behavior: smooth;
 }
 
 .cities_table_bg_container{
     padding: 30px;
-    height: 100vh;
+    
     width: 80%;
     text-align: center;
     margin: auto;
+    
 }
 .heading_input_wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: white;
 }
 
 .cities_heading {
@@ -24,3 +30,46 @@
     line-height:16px;
 }
 
+.table_wrapper {
+    max-height: 80vh; /* Adjust as needed */
+    overflow-y: auto;
+    display: block;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; /* Ensure uniform column widths */
+}
+
+thead {
+    background-color: rgb(232, 229, 229);
+}
+
+tbody{
+    width: 100%;
+}
+th, td {
+    padding: 10px;
+    border: 1px solid #000;
+    text-align: center;
+}
+
+th, td {
+    /* width: 25%; Ensure equal width across columns */
+    width: 100%;
+}
+
+.table_body {
+    height: 70vh; /* Adjust as needed */
+    overflow-y: auto;
+    display: block;
+    width: 100vh;
+}
+
+.table_body tr {
+    display: table;
+    table-layout: fixed;
+    
+    box-sizing: border-box;
+}

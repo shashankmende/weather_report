@@ -79,6 +79,7 @@ filteredDataFromInput(data); // Reset the parent's state
         placeholder="Enter your city"
         value={searchText}
         onChange={handleSearchChange}
+        name="search_by_city"
       />
       {/* No Data Found Message */}
       {/* {filteredData.length === 0 && <p>No data found...</p>} */}
