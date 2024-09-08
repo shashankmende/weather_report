@@ -21,6 +21,7 @@ body{
     display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   margin-bottom: 20px;
     /* background-color: white; */
     color: white;
@@ -29,7 +30,7 @@ body{
 
 .cities_heading {
     /* font-size: 26px; */
-    line-height:16px;
+ 
     font-weight: 500;
 }
 .table_container {
@@ -58,8 +59,9 @@ body{
     /* border: 1px solid #436a03d6; */
     /* border: 1px solid #d0850c5c; */
     border: 1px solid rgba(71, 137, 194, 0.242);
-    text-align: center;
+    text-align: left;
     width: 30%; /* Ensure equal width across columns */
+    
   }
 
   

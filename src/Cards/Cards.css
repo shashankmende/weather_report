@@ -1,0 +1,15 @@
+
+.cards_container{
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+    width: 180px;
+    border-radius: 8px;
+    padding: 5px;
+    text-align: center;
+    margin: 20px;
+    flex-wrap: wrap;
+    border: 2px solid rgba(165, 159, 159, 0.721);
+}
