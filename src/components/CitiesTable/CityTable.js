@@ -140,6 +140,16 @@ const CityTable = () => {
     [citiesData]
   );
 
+  const handleCityClick = (city) => {
+    navigate(`/city/${city.geoname_id}`, { state: { city } });
+  };
+
+  const handleCityRightClick = (event, city) => {
+    event.preventDefault(); // Prevent the default context menu
+    const newTab = window.open(`/city/${city.geoname_id}`, "_blank");
+    newTab.focus(); // Focus on the newly opened tab
+  };
+
   return (
     <div className="cities_table_bg_container">
       <div className="heading_input_wrapper">
@@ -204,17 +214,15 @@ const CityTable = () => {
               <tr key={index}>
                 <td
                   style={{ cursor: "pointer" }}
-                  onClick={() =>
-                    navigate(`/city/${city.geoname_id}`, { state: { city } })
-                  }
+                  onClick={() => handleCityClick(city)}
+                  onContextMenu={(event) => handleCityRightClick(event, city)}
                 >
                   {city.name}
                 </td>
                 <td
                   style={{ cursor: "pointer" }}
-                  onClick={() =>
-                    navigate(`/city/${city.geoname_id}`, { state: { city } })
-                  }
+                  onClick={() => handleCityClick(city)}
+                  onContextMenu={(event) => handleCityRightClick(event, city)}
                 >
                   {city.cou_name_en}
                 </td>
