@@ -90,6 +90,8 @@ filteredDataFromInput(data); // Reset the parent's state
     }
   };
 
+
+
   return (
     <div style={{position:'relative'}}>
       <input
@@ -100,6 +102,7 @@ filteredDataFromInput(data); // Reset the parent's state
         onChange={handleSearchChange}
         name="search_by_city"
       />
+      
       {/* No Data Found Message */}
       {/* {filteredData.length === 0 && <p>No data found...</p>} */}
 

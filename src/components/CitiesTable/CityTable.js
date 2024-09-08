@@ -6,7 +6,7 @@ import { DNA } from "react-loader-spinner";
 import "./CityTable.css";
 import AutoComplete from "../AutoCompleteInput/AutoComplete";
 import { MdSort } from "react-icons/md";
-import Sort from "../../Sort/Sort";
+import Sort from "../Sort/Sort";
 import { useNavigate } from "react-router-dom";
 
 const CityTable = () => {
