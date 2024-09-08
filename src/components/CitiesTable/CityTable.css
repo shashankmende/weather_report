@@ -6,70 +6,126 @@
     scroll-behavior: smooth;
 }
 
+body{
+    overflow: hidden;
+}
+
 .cities_table_bg_container{
-    padding: 30px;
-    
-    width: 80%;
-    text-align: center;
-    margin: auto;
+    padding: 20px;
+  max-width: 90%;
+  margin: auto;
+  text-align: center;
     
 }
 .heading_input_wrapper {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 10px 0;
-    position: sticky;
-    top: 0;
-    z-index: 1;
-    background-color: white;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+    /* background-color: white; */
+    color: white;
+   
 }
 
 .cities_heading {
-    font-size: 26px;
+    /* font-size: 26px; */
     line-height:16px;
+    font-weight: 500;
 }
-
-.table_wrapper {
-    max-height: 80vh; /* Adjust as needed */
-    overflow-y: auto;
-    display: block;
-}
-
-.table {
+.table_container {
+    width: 100%;
+    overflow: hidden; /* Prevent horizontal overflow */
+    /* border: 1px solid #000; */
+    box-shadow: 1px 1px 4px 2px #000,0px 0px 4px 8px #69a5cd;
+  }
+  
+  table {
     width: 100%;
     border-collapse: collapse;
-    table-layout: fixed; /* Ensure uniform column widths */
-}
-
-thead {
-    background-color: rgb(232, 229, 229);
-}
-
-tbody{
+  }
+  
+  thead {
+    display: table;
     width: 100%;
-}
-th, td {
+    table-layout: fixed; /* Ensure columns maintain consistent width */
+    background-color: rgba(71, 137, 194, 0.666);
+    
+  }
+  
+  th, td {
     padding: 10px;
-    border: 1px solid #000;
+    /* border: 1px solid #000;/ */
+    /* border: 1px solid #436a03d6; */
+    /* border: 1px solid #d0850c5c; */
+    border: 1px solid rgba(71, 137, 194, 0.242);
     text-align: center;
-}
+    width: 30%; /* Ensure equal width across columns */
+  }
 
-th, td {
-    /* width: 25%; Ensure equal width across columns */
+  
+  
+  tbody {
+    display: inline-block;
+    max-height: 80vh; /* Set max height for scroll */
+    overflow-y: auto; /* Make the body scrollable */
+    overflow-x: hidden;
     width: 100%;
-}
+  }
+  
+  tbody tr {
+    display: table;
+    table-layout: fixed; /* Keep the width consistent */
+    width: 100%;
+  }
+  
+  th {
+    /* background-color: #f4f4f4; */
+    /* background-color: #d0850c53; */
+    /* background-color: white; */
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
 
-.table_body {
-    height: 70vh; /* Adjust as needed */
-    overflow-y: auto;
-    display: block;
-    width: 100vh;
+  td{
+    /* color: rgba(1, 70, 25, 0.727); */
+    color: rgba(252, 252, 252, 0.815) ;
+    font-weight:500;
+  }
+
+  tr:hover{
+    /* background-color: #f1f1f1; */
+    background-color: #bebcbc6e;
+  }
+
+
+  .table_body::-webkit-scrollbar{
+    width: 12px;
+    
+  }
+
+  .table_body::-webkit-scrollbar-track{
+    /* background-color: #f1f1f1; */
+    background-color: white;
+
+    border-radius: 2px;
+    
+  }
+  .table_body::-webkit-scrollbar-thumb{
+    /* background-color: #888; */
+    background-color: #289acfd2;
+    
+    border-radius: 10px;
+    border: 3px solid #f1f1f1;
+  }
+  .table_body::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Handle color on hover */
+  }
+  .table_body {
+  scroll-snap-type: y mandatory; /* Enables snap scrolling */
 }
 
 .table_body tr {
-    display: table;
-    table-layout: fixed;
-    
-    box-sizing: border-box;
+  scroll-snap-align: start; /* Align rows to snap position */
 }

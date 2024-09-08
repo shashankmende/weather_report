@@ -4,7 +4,9 @@
     padding: 8px;
     border-radius: 3px;
     font-size: 18px;
-    border: 1px solid #000;
+    /* border: 1px solid #000; */
+    border: none;
+
 }
 
 .search_input:focus{

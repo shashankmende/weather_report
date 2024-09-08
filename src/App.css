@@ -1,38 +1,12 @@
-/* .App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+*{
+  font-family:'geomanist bold';
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.App {
+  /* background-image: url(); */
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.253), rgba(0, 0, 0, 0.873)), url('./assets/weather_bg.png'); */
+  background-image: linear-gradient(rgba(62, 145, 201, 0.712), rgba(16, 61, 39, 0.789)), url('./assets/weather_bg.png');
+  height: 100vh;
+  background-size: cover;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */

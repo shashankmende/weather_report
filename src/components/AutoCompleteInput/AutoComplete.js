@@ -15,6 +15,25 @@ const AutoComplete = ({ data, filteredDataFromInput }) => {
   }));
 
 
+  const customStyles = {
+    control: (provided) => ({
+      ...provided,
+      backgroundColor: '#f0f0f0', // Background color for the select control
+    }),
+    menu: (provided) => ({
+      ...provided,
+      backgroundColor: '#ffffff', // Background color for the dropdown menu
+    }),
+    option: (provided, state) => ({
+      ...provided,
+      backgroundColor: state.isSelected ? '#e0e0e0' : '#ffffff', // Background color for options
+      color: state.isSelected ? '#000000' : '#333333', // Text color for options
+    }),
+    singleValue: (provided) => ({
+      ...provided,
+      color: '#333333', // Text color for the selected value
+    }),
+  };
 
 
 
@@ -72,7 +91,7 @@ filteredDataFromInput(data); // Reset the parent's state
   };
 
   return (
-    <div>
+    <div style={{position:'relative'}}>
       <input
         className="search_input"
         type="search"
@@ -85,6 +104,7 @@ filteredDataFromInput(data); // Reset the parent's state
       {/* {filteredData.length === 0 && <p>No data found...</p>} */}
 
       {/* Dropdown only when data is available */}
+      <div style={{position:'absolute',width:'100%'}}>
       {filteredData.length>0 && (
         <Select
           value={null} // Only set to null when no specific option is selected
@@ -92,8 +112,10 @@ filteredDataFromInput(data); // Reset the parent's state
           options={options}
           placeholder="Search..."
           isClearable
+          styles={customStyles}
         />
       )}
+      </div>
     </div>
   );
 };
